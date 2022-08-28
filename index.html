@@ -1,20 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Greener Grass</title>
-        <link rel="stylesheet" href="./assets/style.css" />
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        />
-    </head>
-    <body>
-        <header class="hero">
-            <h1 class="dashboard-title">Greener Grass</h1>
-        </header>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greener Grass Schedule</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    
+    <header>
+        <h1>
+            <a href="/">Greener Grass</a>            
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="customer-info">Customer Form</a>
+                </li>
+                <li>
+                    <a href="contact-us">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    </body>
-    <script src="./assets/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <section>
+        <div class="customer-form">
+          
+            <h3>Schedule your service today!</h3>
+            <p>Fill out the information below to schedule your service with us.</p>
+            <form>
+
+            </form>
+               <label for="name">Enter full name:</label>
+               <input class="form-input" type="text" placeholder="Your Name" name="name" id="name"/>
+
+               <label for="email">Enter email address:</label>
+               <input class="form-input" type="email" placeholder="Email Address" name="email" id="email" />
+
+               <label for="phone">Enter a telephone number:</label>
+               <input class="form-input" type="tel" placeholder="Phone Number" name="phone" id="phone" />
+        </div>
+        <div class="service-choices">
+            <!--Enter services offered here-->
+        </div>
+
+        <div class="weather-calender">
+            <!--Section for weather and calender section-->
+        </div>
+
+
+    </section>
+    <footer>
+        Made by:
+    </footer>
+    <script href="./assets/script.js"></script>
+</body>
 </html>
