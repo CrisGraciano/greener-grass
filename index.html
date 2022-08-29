@@ -1,59 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Greener Grass Schedule</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Greener Grass</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     
     <header>
-        <h1>
+        <h1 class="title is-1">
             <a href="/">Greener Grass</a>            
         </h1>
         <nav>
             <ul>
                 <li>
-                    <a href="customer-info">Customer Form</a>
+                    <h2 class="title is-3"><a href="customer-info">Schedule Service</a></h2>
                 </li>
                 <li>
-                    <a href="contact-us">Contact Us</a>
+                    <h2 class="title is-3"><a href="contact-us">Contact Us</a></h2>
                 </li>
             </ul>
         </nav>
     </header>
 
     <section>
-        <div class="customer-form">
-          
-            <h3>Schedule your service today!</h3>
-            <p>Fill out the information below to schedule your service with us.</p>
-            <form>
+        <div class="columns">
+            <div class="customer-form column">
+                <h2 class="title is-3">Schedule your service today!</h2>
+                 <p>Fill out the information below to schedule your service with us.</p>
 
-            </form>
-               <label for="name">Enter full name:</label>
-               <input class="form-input" type="text" placeholder="Your Name" name="name" id="name"/>
+                <form>
+                <label for="name">Enter full name:</label>
+                <input class="form-input" type="text" placeholder="Your Name" name="name" id="name"/>
 
-               <label for="email">Enter email address:</label>
-               <input class="form-input" type="email" placeholder="Email Address" name="email" id="email" />
+                <label for="email">Enter email address:</label>
+                <input class="form-input" type="email" placeholder="Email Address" name="email" id="email" />
 
-               <label for="phone">Enter a telephone number:</label>
-               <input class="form-input" type="tel" placeholder="Phone Number" name="phone" id="phone" />
-        </div>
-        <div class="service-choices">
-            <!--Enter services offered here-->
-        </div>
+                <label for="phone">Enter a telephone number:</label>
+                <input class="form-input" type="tel" placeholder="Phone Number" name="phone" id="phone" />
+                    <div class="service-choices">
+                        <p>Choose from the choices listed below for your service</p>
+                        <!--Enter services offered here-->
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            Tree Trimming
+                            <input type="checkbox">
+                            Lawn Trimming
+                            <input type="checkbox">
+                            Lawn Spray
+                            <input type="checkbox">
+                            Hedge Bush Trimming
+                        </label>
+                        <button>Submit</button>
+                    </div>  
+                </form>
+            </div>  
+        
 
-        <div class="weather-calender">
-            <!--Section for weather and calender section-->
+            <div class="weather-calender column">
+                <h2 class="title is-3">Weather Forecast</h2>
+                <p>We have provided a weather forecast to help you decide on the day that works best for everyone!</p>
+                <!--Section for weather and calender section-->
+            </div>
+
         </div>
 
 
     </section>
     <footer>
-        Made by:
+        Made by: Priscilla Montalvo, Creyton Valentine, Cristobal Graciano
     </footer>
     <script href="./assets/script.js"></script>
 </body>
