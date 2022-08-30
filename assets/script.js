@@ -1,7 +1,6 @@
 const API_KEY = 'a63128da5bbea92dc82e57485296ca3c';
 const HOLIDAY_API_KEY = '1556e945-90ab-42b4-b3d5-02eae2016151';
 
-// //gets city data from API
 var fetchCityData = function() {
     const CITY = "san antonio";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&appid=" + API_KEY;
@@ -53,7 +52,11 @@ var displayForecast = function(day, data) {
     dayElement.innerHTML = day;
 
     var temp = document.createElement("p");
-    temp.innerHTML = "Temperature: " + data.main.temp;
+
+    var tempNum =  kToF(data.main.temp).toString();
+    tempNum = tempNum.substring(0, tempNum.indexOf('.'));
+    temp.innerHTML = "Temperature: " + tempNum;
+    
 
     $('#display-forecast').append(dayElement);
     $('#display-forecast').append(temp);
@@ -74,5 +77,16 @@ var fetchHolidays = function(){
     });
 }
 
+function kToF(temp) {
+ 
+  return (temp - 273.15) * 9 / 5 + 32;
+}
+
 fetchHolidays();
 fetchCityData();
+
+// $(function) {
+//     $("#btn").on("click", function() {
+//         $("#calendar").hide();
+//     });
+// }
