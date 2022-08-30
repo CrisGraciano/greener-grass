@@ -16,7 +16,7 @@
         <h1 class="title is-1">
             <a href="/">Greener Grass</a>            
         </h1>
-        <nav>
+        
             <ul>
                 <li>
                     <h2 class="title is-3"><a href="customer-info">Schedule Service</a></h2>
@@ -25,10 +25,10 @@
                     <h2 class="title is-3"><a href="contact-us">Contact Us</a></h2>
                 </li>
             </ul>
-        </nav>
+    
     </header>
 
-    <section>
+    <section class="testing">
         <div class="columns">
             <div class="customer-form column is-6">
                 <h2 class="title is-3">Schedule your service today!</h2>
@@ -37,23 +37,25 @@
                 <form>
                 <label for="name">Enter full name:</label>
                 <input class="form-input" type="text" placeholder="Your Name" name="name" id="name"/>
-
+                <br />
                 <label for="email">Enter email address:</label>
                 <input class="form-input" type="email" placeholder="Email Address" name="email" id="email" />
-
+                <br />
                 <label for="phone">Enter a telephone number:</label>
                 <input class="form-input" type="tel" placeholder="Phone Number" name="phone" id="phone" />
-                        <p>Choose from the choices listed below for your service</p>
+                <br />
+                        <p>Choose from the choices listed below for your service:</p>
                         <!--Enter services offered here-->
                         <label class="checkbox">
-                            <input type="checkbox">
-                            Tree Trimming
-                            <input type="checkbox">
-                            Lawn Trimming
-                            <input type="checkbox">
-                            Lawn Spray
-                            <input type="checkbox">
-                            Hedge Bush Trimming
+                            <ul>
+                            <li><input type="checkbox">Tree Trimming</li>
+                            
+                            <li><input type="checkbox">Lawn Trimming</li>
+                            
+                            <li><input type="checkbox">Lawn Spray</li>
+                            
+                            <li><input type="checkbox">Hedge Bush Trimming</li>
+                            </ul>
                         </label>
                         <button class="button" id="btn">Submit</button>  
                 </form>
