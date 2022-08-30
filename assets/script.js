@@ -1,6 +1,21 @@
 const API_KEY = 'a63128da5bbea92dc82e57485296ca3c';
 const HOLIDAY_API_KEY = '1556e945-90ab-42b4-b3d5-02eae2016151';
 
+
+
+var nameInput = document.querySelector("#name");
+var button = document.querySelector("#btn");
+var display = document.querySelector("#confirm-display");
+var emailInput = document.querySelector("#email");
+
+var displayFunction = function(event) {
+    event.preventDefault();
+    display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
+};
+
+button.addEventListener("click", displayFunction);
+
+
 var fetchCityData = function() {
     const CITY = "san antonio";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&appid=" + API_KEY;
@@ -85,6 +100,5 @@ function kToF(temp) {
 fetchHolidays();
 fetchCityData();
 
-var name = document.getElementById("#name");
-var button = document.getElementById("#btn");
-var display = document.getElementById("#confirm-display");
+
+
