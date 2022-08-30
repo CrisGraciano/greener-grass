@@ -1,5 +1,5 @@
 * {
-    margin: 0;
+    margin: 5px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -29,7 +29,9 @@ header nav {
 }
 
 header nav ul li {
-    display: inline;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
 }
 
 footer {
@@ -48,6 +50,18 @@ footer {
     display: flex;
 }
 
+div {
+    border: solid black 3px;
+}
+
+.testing {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkbox {
+    display: list-item;
+}
 
 
 
