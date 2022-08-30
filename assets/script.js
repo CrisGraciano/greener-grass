@@ -1,5 +1,8 @@
 const API_KEY = 'a63128da5bbea92dc82e57485296ca3c';
 const HOLIDAY_API_KEY = '1556e945-90ab-42b4-b3d5-02eae2016151';
+
+
+
 //search input
 var search = () => {
     var city = document.getElementById("search-box").value;
@@ -55,3 +58,9 @@ var fetchHolidays = function(){
 
 fetchHolidays();
 fetchCityData();
+
+$(function) {
+    $("#btn").on("click", function() {
+        $("#calendar").hide();
+    });
+}
