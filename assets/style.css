@@ -46,6 +46,7 @@ footer {
 
 .checkbox {
     display: flex;
+    text-align: center;
 }
 
 
