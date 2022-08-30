@@ -85,8 +85,6 @@ function kToF(temp) {
 fetchHolidays();
 fetchCityData();
 
-// $(function) {
-//     $("#btn").on("click", function() {
-//         $("#calendar").hide();
-//     });
-// }
+var name = document.getElementById("#name");
+var button = document.getElementById("#btn");
+var display = document.getElementById("#confirm-display");
