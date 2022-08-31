@@ -71,6 +71,7 @@ var displayFiveDayForecast = function(data){
 
 //calls single day
 var displayForecast = function(day, data) {
+    day = day.substring(5, day.length);
     //create weather element 
     var container = document.createElement("div");
     var dayElement = document.createElement("p");
