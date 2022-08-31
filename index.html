@@ -36,7 +36,7 @@
             <div class="customer-form column is-6">
                 <h2 class="title is-3">Schedule your service today!</h2>
                  <p>Fill out the information below to schedule your service with us.</p>
-
+                <!--input text-->
                 <form>
                 <label for="name">Enter full name:</label>
                 <input class="form-input" type="text" placeholder="Your Name" name="name" id="name"/>
@@ -46,7 +46,7 @@
                 <br />
                 <label for="phone">Enter a telephone number:</label>
                 <input class="form-input" type="tel" placeholder="Phone Number" name="phone" id="phone" />
-                <p>Date: <input type="text" id="datepicker"></p>
+                <p>Date: <input type="text" id="datepicker" placeholder="Pick Date"> </p>
                 <br />
                         <p>Choose from the choices listed below for your service:</p>
                         <!--Enter services offered here-->
@@ -65,8 +65,7 @@
                         <button class="button is-outline is-primary" id="btn" onclick="validateDate()">Submit</button>  
                 <p class="confirm-display" id="confirm-display"></p>  
                 </form>
-            </div>  
-        
+            </div> 
             <div class="weather-calender " id="calendar">
                 <h2 class="title is-3">Weather Forecast</h2>
                 <p>We have provided a weather forecast to help you decide on the day that works best for everyone!</p>
@@ -82,6 +81,7 @@
     </footer>
 
     </body>
+    <!--scripts for js and jquery-->
     <script src="./assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>

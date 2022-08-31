@@ -27,7 +27,7 @@ var displayFunction = function(event) {
 
 button.addEventListener("click", displayFunction);
 
-
+//gets the city information
 var fetchCityData = function() {
     const CITY = "san antonio";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + CITY + "&appid=" + API_KEY;
@@ -46,6 +46,7 @@ var fetchCityData = function() {
 var fetchFiveDayForecast = function(lon, lat){
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid="+ API_KEY; 
     console.log(queryURL);
+    //gets response from API 
     fetch(queryURL).then(function(response) {
         // request was successful
         if (response.ok) {
@@ -57,7 +58,7 @@ var fetchFiveDayForecast = function(lon, lat){
         }
     });
 }
-
+//show five day forecast on page
 var displayFiveDayForecast = function(data){
     for(var i = 0; i < 5*8; i+=8){
        var currentDayData = data.list[i];
@@ -70,21 +71,22 @@ var displayFiveDayForecast = function(data){
 
 //calls single day
 var displayForecast = function(day, data) {
-    //create weather element
+    //create weather element 
     var container = document.createElement("div");
     var dayElement = document.createElement("p");
     dayElement.innerHTML = day;
 
     var temp = document.createElement("p");
-
+    //calls ktoF function
     var tempNum =  kToF(data.main.temp).toString();
+    //change from decimal to whole number temp
     tempNum = tempNum.substring(0, tempNum.indexOf('.'));
     temp.innerHTML = "Temperature: " + tempNum;
     container.appendChild(dayElement);
     container.appendChild(temp);
     $('#display-forecast').append(container);
 };
-
+//get Holiday Api
 var fetchHolidays = function(){
     var queryURL = "https://holidayapi.com/v1/holidays?pretty&country=US-TX&year=2021&key=" + HOLIDAY_API_KEY; 
     console.log(queryURL);
@@ -99,19 +101,20 @@ var fetchHolidays = function(){
     });
     
 }
-
+//changes temp from kelvin to fahrenheit
 function kToF(temp) {
- 
+ //conversion equation
   return (temp - 273.15) * 9 / 5 + 32;
 }
-
+//check to see if the date if valid/available
 var validateDate = function() {
+    //removes year from date
     var selectedDate = document.querySelector("#datepicker").value.substring(0, 5);
     console.log(selectedDate);
     console.log(allHolidays.includes(selectedDate))
     return allHolidays.includes(selectedDate);
 }
-
+//returns all the dates from the holidays API
 var getHolidayDates = function(data) {
     const holidays = [];
     for(let holiday of data.holidays){
@@ -128,6 +131,6 @@ $( function() {
     $( "#datepicker" ).datepicker();
 });
 
-
+//call APIs
 fetchHolidays();
 fetchCityData();
