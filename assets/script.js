@@ -2,7 +2,6 @@ const API_KEY = 'a63128da5bbea92dc82e57485296ca3c';
 const HOLIDAY_API_KEY = '1556e945-90ab-42b4-b3d5-02eae2016151';
 var holiday = [];
 
-
 var nameInput = document.querySelector("#name");
 var button = document.querySelector("#btn");
 var display = document.querySelector("#confirm-display");
@@ -10,13 +9,16 @@ var emailInput = document.querySelector("#email");
 
 var displayFunction = function(event) {
     event.preventDefault();
-    display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
 
     if (emailInput.value || nameInput.value) {
         display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
     };
 
-    else 
+    else {
+        if (emailInput.value || nameInput.value === null) {
+            display.innerHTML = "Please enter your name and email address";
+        };
+    };
 };
 
 button.addEventListener("click", displayFunction);
