@@ -1,6 +1,6 @@
 const API_KEY = 'a63128da5bbea92dc82e57485296ca3c';
 const HOLIDAY_API_KEY = '1556e945-90ab-42b4-b3d5-02eae2016151';
-
+var allHolidays = [];
 
 
 var nameInput = document.querySelector("#name");
@@ -10,11 +10,15 @@ var emailInput = document.querySelector("#email");
 
 var displayFunction = function(event) {
     event.preventDefault();
-    display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
-
-    if (emailInput.value || nameInput.value) {
+    if(validateDate()){
+        display.innerHTML = "The date you have chosen is a holiday, please select a different date."
+    }else{
         display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
-    };
+
+        if (emailInput.value || nameInput.value) {
+            display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
+        };
+    }
 };
 
 button.addEventListener("click", displayFunction);
@@ -31,9 +35,7 @@ var fetchCityData = function() {
                 
                 fetchFiveDayForecast(data.coord.lon, data.coord.lat);
             });
-        } else {
-        alert("Error: " + response.statusText);
-        }
+        } 
     });
 }
 //get 5 day forecast from API
@@ -48,8 +50,6 @@ var fetchFiveDayForecast = function(lon, lat){
             
             console.log(data);
         });
-        } else {
-        alert("Error: " + response.statusText);
         }
     });
 }
@@ -67,7 +67,8 @@ var displayFiveDayForecast = function(data){
 //calls single day
 var displayForecast = function(day, data) {
     //create weather element
-    var dayElement = document.createElement("h2");
+    var container = document.createElement("div");
+    var dayElement = document.createElement("p");
     dayElement.innerHTML = day;
 
     var temp = document.createElement("p");
@@ -75,10 +76,9 @@ var displayForecast = function(day, data) {
     var tempNum =  kToF(data.main.temp).toString();
     tempNum = tempNum.substring(0, tempNum.indexOf('.'));
     temp.innerHTML = "Temperature: " + tempNum;
-    
-
-    $('#display-forecast').append(dayElement);
-    $('#display-forecast').append(temp);
+    container.appendChild(dayElement);
+    container.appendChild(temp);
+    $('#display-forecast').append(container);
 };
 
 var fetchHolidays = function(){
@@ -89,9 +89,8 @@ var fetchHolidays = function(){
         if (response.ok) {
         response.json().then(function(data) {
             console.log(data);
+            allHolidays = getHolidayDates(data);
         });
-        } else {
-        alert("Error: " + response.statusText);
         }
     });
     
@@ -102,8 +101,29 @@ function kToF(temp) {
   return (temp - 273.15) * 9 / 5 + 32;
 }
 
+var validateDate = function() {
+    var selectedDate = document.querySelector("#datepicker").value.substring(0, 5);
+    console.log(selectedDate);
+    console.log(allHolidays.includes(selectedDate))
+    return allHolidays.includes(selectedDate);
+}
+
+var getHolidayDates = function(data) {
+    const holidays = [];
+    for(let holiday of data.holidays){
+        let date = holiday.date.substring(5, holiday.date.length);
+        date = date.replace("-", "/");
+        holidays.push(date);
+    } 
+    console.log(holidays)
+
+    return holidays;
+}
+
+$( function() {
+    $( "#datepicker" ).datepicker();
+});
+
+
 fetchHolidays();
 fetchCityData();
-
-
-

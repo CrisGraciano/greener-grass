@@ -61,10 +61,9 @@ div {
 }
 
 #display-forecast {
-    font-size: large;
     color: white;
-    background-color: #05386b;
-    position: absolute;
+    background: #05386b;
+
 }
 
 
