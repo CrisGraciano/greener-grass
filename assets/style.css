@@ -11,6 +11,8 @@ body {
 header {
     padding: 20px 35px;
     background-color: #5cdb95;
+    position: sticky;
+    top: 0;
 }
 
 header h1 {
@@ -50,10 +52,6 @@ footer {
 
 .checkbox {
     display: flex;
-}
-
-div {
-    border: solid black 3px;
 }
 
 .testing {
