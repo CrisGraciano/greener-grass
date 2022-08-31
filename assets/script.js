@@ -94,6 +94,7 @@ var fetchHolidays = function(){
         alert("Error: " + response.statusText);
         }
     });
+    
 }
 
 function kToF(temp) {
@@ -105,4 +106,12 @@ fetchHolidays();
 fetchCityData();
 
 
+<<<<<<< HEAD
 
+=======
+// $(function) {
+//     $("#btn").on("click", function() {
+//         $("#calendar").hide();
+//     });
+// }
+>>>>>>> priscilla
