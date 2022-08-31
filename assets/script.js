@@ -11,6 +11,10 @@ var emailInput = document.querySelector("#email");
 var displayFunction = function(event) {
     event.preventDefault();
     display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
+
+    if (emailInput.value || nameInput.value) {
+        display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
+    };
 };
 
 button.addEventListener("click", displayFunction);
