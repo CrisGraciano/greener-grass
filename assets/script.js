@@ -7,6 +7,15 @@ var nameInput = document.querySelector("#name");
 var button = document.querySelector("#btn");
 var display = document.querySelector("#confirm-display");
 var emailInput = document.querySelector("#email");
+var errorDisplay = document.querySelector("#error-display");
+
+errorDisplay.innerHTML = localStorage.getItem("name");
+
+//store name input values
+function display() {
+    localStorage.setItem("name", nameInput.value);
+    console.log(errorDisplay.innerHTML = localStorage.getItem("name"));
+}
 
 var displayFunction = function(event) {
     event.preventDefault();
