@@ -6,9 +6,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Greener Grass</title>
+    <link rel="stylesheet" type="text/css" media="all"
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/smoothness/jquery-ui.css"    />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/style.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -32,7 +36,7 @@
             <div class="customer-form column is-6">
                 <h2 class="title is-3">Schedule your service today!</h2>
                  <p>Fill out the information below to schedule your service with us.</p>
-
+                <!--input text-->
                 <form>
                 <label for="name">Enter full name:</label>
                 <input class="form-input" type="text" placeholder="Your Name" name="name" id="name"/>
@@ -42,40 +46,45 @@
                 <br />
                 <label for="phone">Enter a telephone number:</label>
                 <input class="form-input" type="tel" placeholder="Phone Number" name="phone" id="phone" />
+                <p>Date: <input type="text" id="datepicker" placeholder="Pick Date"> </p>
                 <br />
-                
                         <p>Choose from the choices listed below for your service:</p>
                         <!--Enter services offered here-->
                         <label class="checkbox">
                             <ul>
-                            <input type="checkbox">Tree Trimming
+                            <li><input type="checkbox">Tree Trimming</li>
                             <br />
-                            <input type="checkbox">Lawn Trimming
+                            <li><input type="checkbox">Lawn Trimming</li>
                             <br />
-                            <input type="checkbox">Lawn Spray
+                            <li><input type="checkbox">Lawn Spray</li>
                             <br />
-                            <input type="checkbox">Hedge Bush Trimming
+                            <li><input type="checkbox">Hedge Bush Trimming</li>
                             <br />
                             </ul>
                         </label>
-                        <button class="button is-outline is-primary" id="btn">Submit</button>
+                        <button class="button is-outline is-primary" id="btn" onclick="validateDate()">Submit</button>  
                 <p class="confirm-display" id="confirm-display"></p>  
-                        
                 </form>
-            </div>  
-        
-            <div class="weather-calender column is-6" id="calendar">
+            </div> 
+            <div class="weather-calender " id="calendar">
                 <h2 class="title is-3">Weather Forecast</h2>
                 <p>We have provided a weather forecast to help you decide on the day that works best for everyone!</p>
                 <!--Section for weather and calender section-->
-                <div id="display-forecast"></div>
+                <span id="display-forecast">
+                    
+                </span>
             </div>
-        </section>
-        <footer>
-            Made by: Priscilla Montalvo, Creyton Valentine, Cristobal Graciano
-        </footer>
-        
+        </div>
+    </section>
+    <footer>
+        Made by: Priscilla Montalvo, Creyton Valentine, Cristobal Graciano
+    </footer>
+
     </body>
+    <!--scripts for js and jquery-->
     <script src="./assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    
 </html>

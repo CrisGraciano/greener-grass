@@ -60,5 +60,11 @@ div {
     flex-direction: column;
 }
 
+#display-forecast {
+    color: white;
+    background-color: #05386b;
+
+}
+
 
 
