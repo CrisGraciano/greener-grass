@@ -9,12 +9,12 @@ var display = document.querySelector("#confirm-display");
 var emailInput = document.querySelector("#email");
 var errorDisplay = document.querySelector("#error-display");
 
-errorDisplay.innerHTML = localStorage.getItem("name");
+var saveName = function() {
+    localStorage.setItem("name", JSON.stringify(nameInput.value));
+}
 
-//store name input values
-function display() {
-    localStorage.setItem("name", nameInput.value);
-    console.log(errorDisplay.innerHTML = localStorage.getItem("name"));
+var saveEmail = function() {
+    localStorage.setItem("email", JSON.stringify(emailInput.value));
 }
 
 var displayFunction = function(event) {
@@ -32,7 +32,12 @@ var displayFunction = function(event) {
         allHolidays.push(selectedDate);
         
     }
+
 };
+
+
+saveName();
+saveEmail();
 
 button.addEventListener("click", displayFunction);
 
