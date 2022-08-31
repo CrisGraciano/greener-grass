@@ -60,5 +60,12 @@ div {
     flex-direction: column;
 }
 
+#display-forecast {
+    font-size: large;
+    color: white;
+    background-color: #05386b;
+    position: absolute;
+}
+
 
 

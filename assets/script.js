@@ -75,6 +75,7 @@ var fetchHolidays = function(){
         alert("Error: " + response.statusText);
         }
     });
+    
 }
 
 function kToF(temp) {
@@ -84,6 +85,7 @@ function kToF(temp) {
 
 fetchHolidays();
 fetchCityData();
+
 
 // $(function) {
 //     $("#btn").on("click", function() {
