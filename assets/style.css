@@ -33,7 +33,9 @@ header nav ul li {
     justify-content: center;
     flex-direction: row;
 }
-
+h2  {
+    text-align: center;
+ }
 footer {
     background-color: #5cdb95;
     width: 100%;
