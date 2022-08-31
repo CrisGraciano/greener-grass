@@ -11,13 +11,17 @@ var emailInput = document.querySelector("#email");
 var displayFunction = function(event) {
     event.preventDefault();
     if(validateDate()){
-        display.innerHTML = "The date you have chosen is a holiday, please select a different date."
+        display.innerHTML = "The date you have chosen is a holiday or we already have an appointment scheduled, please select a different date."
     }else{
         display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
 
         if (emailInput.value || nameInput.value) {
             display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
         };
+        //Add valid appointment to the list of days that cannot be chosen
+        var selectedDate = document.querySelector("#datepicker").value.substring(0, 5);
+        allHolidays.push(selectedDate);
+        
     }
 };
 
