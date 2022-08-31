@@ -1,6 +1,6 @@
 const API_KEY = 'a63128da5bbea92dc82e57485296ca3c';
 const HOLIDAY_API_KEY = '1556e945-90ab-42b4-b3d5-02eae2016151';
-
+var holiday = [];
 
 
 var nameInput = document.querySelector("#name");
@@ -15,6 +15,8 @@ var displayFunction = function(event) {
     if (emailInput.value || nameInput.value) {
         display.innerHTML = "You're all set " + nameInput.value + ". " + "An email has been sent to " + emailInput.value;
     };
+
+    else 
 };
 
 button.addEventListener("click", displayFunction);
