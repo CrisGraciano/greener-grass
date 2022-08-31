@@ -48,6 +48,7 @@ footer {
 
 .checkbox {
     display: flex;
+    text-align: center;
 }
 
 div {
@@ -59,8 +60,11 @@ div {
     flex-direction: column;
 }
 
-.checkbox {
-    display: list-item;
+#display-forecast {
+    font-size: large;
+    color: white;
+    background-color: #05386b;
+    position: absolute;
 }
 
 
